@@ -1,0 +1,5 @@
+query.json =            https://www.nyc.gov/content/planning/pages/resources/datasets/neighborhood-names
+                        "View GeoJSON"
+
+trip_data_(id).csv =    https://www.andresmh.com/nyctaxitrips/
+                        "trip_data.7z"

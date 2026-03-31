@@ -1,0 +1,1 @@
+token_transfers_V2.0.0.csv =    https://snap.stanford.edu/data/ERC20-stablecoins.html

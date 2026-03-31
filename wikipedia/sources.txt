@@ -1,0 +1,1 @@
+enwiki-20080103.main.bz2 =      https://snap.stanford.edu/data/wiki-meta.html

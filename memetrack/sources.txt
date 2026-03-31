@@ -1,0 +1,2 @@
+memes-w5-all-2011-03-2012-02-n5000-call-nc10-cl2-cascades.txt =     https://snap.stanford.edu/infopath/data.html
+                                                                    "[...]cascades-all.tgz"

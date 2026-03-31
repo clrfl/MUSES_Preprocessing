@@ -1,0 +1,1 @@
+-> run https://github.com/synthetichealth/synthea with -p 10000 -s 42

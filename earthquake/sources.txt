@@ -1,0 +1,1 @@
+ComCat_catalog.csv =    https://raw.githubusercontent.com/ss15859/EarthquakeNPP/refs/heads/main/Datasets/ComCat/ComCat_catalog.csv
