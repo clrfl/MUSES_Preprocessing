@@ -1,39 +1,35 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.ticker import ScalarFormatter
-
+pretty = {
+    'ts_len_avg':'Average time series length',
+    'ts_count_total':'Time series count',
+    'class_count':'Class count',
+    'event_count_total':'Event count',
+}
 df = pd.read_csv('analysisdoc.csv', sep=',')
+df_pivot = df.pivot(index='dataset', columns='parameter', values='value').reset_index()
 
-params = [['ts_len_avg',12], ['ts_count_total',21], ['class_count',13], ['event_count_total',25]]
+cols_to_convert = df_pivot.columns.drop('dataset')
+df_pivot[cols_to_convert] = df_pivot[cols_to_convert].apply(pd.to_numeric, errors='coerce')
 
-for i in params:
-    filterparameter = i[0]
-    max_power = i[1]
+metriken = ['ts_len_avg', 'ts_count_total', 'class_count', 'event_count_total']
 
-    # 1. Daten filtern: Nur 'class_count'
-    df_classes = df[df['parameter'] == filterparameter]
-    values = df_classes['value']
-    # 2. Zweierpotenzen für die Bins generieren (z. B. von 2^0 bis 2^16)
-    # Das erzeugt die Liste: [1, 2, 4, 8, 16, 32, ..., 65536]
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(14, 10))
+axes = axes.flatten()
 
-    bins = [2**i for i in range(max_power + 1)]
-    # 3. Plot erstellen
-    fig, ax = plt.subplots(figsize=(10, 6))
-    # Histogramm mit den neuen Bins zeichnen
-    ax.hist(values, bins=bins, edgecolor='black', color='lightgreen')
-    # 4. X-Achse auf logarithmisch umstellen, aber dieses Mal mit Basis 2!
-    ax.set_xscale('log', base=10)
-    # Beschriftungen
-    ax.set_title('Verteilung der '+filterparameter+' (Zweierpotenzen)')
-    ax.set_xlabel(filterparameter+' (Größenordnung: 1, 2, 4, 8, 16...)')
-    ax.set_ylabel('Anzahl der Datensätze')
-    # 5. Formatierung der X-Achse
-    # Zeigt normale Zahlen statt wissenschaftlicher Notation (z.B. 2^3)
-    ax.xaxis.set_major_formatter(ScalarFormatter())
-    # Optional: Zwingt Matplotlib dazu, exakt bei unseren Bins einen Strich (Tick) zu setzen
-    ax.set_xticks(bins)
-    # Falls die Zahlen auf der X-Achse überlappen, rotieren wir sie leicht
-    plt.xticks(rotation=45)
-    plt.tight_layout() # Sorgt dafür, dass nichts abgeschnitten wird
-    plt.show()
+for i, metrik in enumerate(metriken):
+
+    df_sorted = df_pivot[['dataset', metrik]].dropna().sort_values(by=metrik, ascending=False)
+    axes[i].bar(df_sorted['dataset'], df_sorted[metrik])
+    axes[i].set_yscale('log')
+
+    axes[i].set_title(f'{pretty[metrik]}', fontsize=14, fontweight='bold')
+    axes[i].set_ylabel('Value (log-scale)')
+
+    axes[i].set_xticks(range(len(df_sorted['dataset'])))
+    axes[i].set_xticklabels(df_sorted['dataset'], rotation=45, ha='right')
+
+    axes[i].grid(axis='y', linestyle='--', alpha=0.7)
+
+plt.tight_layout()
+plt.savefig('plot2.pdf', dpi=300)
