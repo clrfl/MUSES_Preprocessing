@@ -16,8 +16,7 @@ import matplotlib.pyplot as plt
 import time
 
 def apply_pattern(marks):
-
-    maximum = 0.5
+    maximum = 0.6
     middle = maximum / 2
 
     high_alpha = [x for x in range(marks)]
@@ -34,14 +33,14 @@ def apply_pattern(marks):
         for i in range(len(item[0])):
             matrix[item[0][i]][item[0][(i+1)%marks]] = item[1]
 
-
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(7, 6))
     plt.imshow(matrix, cmap='magma', aspect='auto')
-    plt.colorbar(label='Intensität')
-    plt.title('150x150 Heatmap')
-    plt.xlabel('X-Achse')
-    plt.ylabel('Y-Achse')
-    plt.show()
+    plt.colorbar(label='alpha value')
+    plt.title('150x150 Hawkes Alpha Value Matrix')
+    plt.xlabel('alpha from class')
+    plt.ylabel('alpha to class')
+    plt.tight_layout()
+    plt.savefig('hawkes_heatmap.pdf', dpi=300)
 
     return np.array(matrix, dtype=np.float32)
 
