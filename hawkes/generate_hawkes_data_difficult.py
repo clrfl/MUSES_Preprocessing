@@ -123,7 +123,7 @@ if __name__ == "__main__":
     # check_repo(allow_uncommitted=not parsed_args.use_mlflow)
     make_deterministic(seed=parsed_args.seed)
 
-    parsed_args.mu = np.array([0.05 for _ in range(parsed_args.marks)], dtype=np.float32)
+    parsed_args.mu = np.array([0.01 for _ in range(parsed_args.marks)], dtype=np.float32)
     parsed_args.beta = matrix = np.full((parsed_args.marks, parsed_args.marks), 1.0)
 
     parsed_args.alpha = apply_pattern(parsed_args.marks)
