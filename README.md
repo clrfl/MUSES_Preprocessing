@@ -52,14 +52,15 @@ If you wish to attribute us when using this code, see the Huggingface repository
 - output: parquet files for each data split of dataset 'earthquake'
 
 ## hawkes
-- NOTE: Used libraries might not yet work on latest python versions. Try running the hawkes generator on Python 3.8
+- NOTE: Used libraries might not yet work on latest python versions. Try running on Python 3.8
 - run `pip install -e torchsearchsorted-master`
 - run: `python generate_hawkes_data_enguehard.py`
+- rename `/home/user/neural-tpps/data` to `/enguehard_data`
 - run: `python generate_hawkes_data_omi.py`
-- Adjust paths to username in 'preprocess_hawkes_data.py'
+- rename `/home/user/neural-tpps/data` to `/omi_data`
+- Adjust paths to username in 'preprocess_hawkes_data.py' to system user
 - run: `python preprocess_hawkes_data.py`
 - output: parquet files for each data split of datasets 'hawkes_dependent' (enguehard) and 'hawkes_1' (omi)
-
 
 ## human_activity
 - run: `python main.py`
