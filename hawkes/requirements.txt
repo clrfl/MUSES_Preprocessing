@@ -1,0 +1,13 @@
+numpy
+pandas
+tqdm
+matplotlib
+torch
+GitPython
+mlflow
+seaborn
+scikit-learn
+tabulate
+tick
+torchsearchsorted
+six

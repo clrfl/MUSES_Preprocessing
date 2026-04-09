@@ -1,0 +1,5 @@
+pandas
+matplotlib
+swifter
+tqdm
+scipy
