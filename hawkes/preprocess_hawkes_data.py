@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-synth_ds = [['/home/user/neural-tpps/difficult_data/hawkes/train.json',150],
+synth_ds = [#['/home/user/neural-tpps/difficult_data/hawkes/train.json',150],
             ['/home/user/neural-tpps/enguehard_data/hawkes/train.json',2],
             ['/home/user/neural-tpps/omi_data/hawkes/train.json',1]]
 
