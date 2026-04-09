@@ -1,6 +1,6 @@
 import pandas as pd
 
-with open("../../../dipl_datasets/casas/new_labeled_data/aruba.txt", 'r', encoding="utf-8") as f:
+with open("./casas/new_labeled_data/aruba.txt", 'r', encoding="utf-8") as f:
     lines = f.readlines()
 
     all_markers = ['Meal_Preparation', 'Leave_Home', 'Enter_Home', 'Work', 'Respirate', 'Relax', 'Sleeping', 'Housekeeping', 'Eating', 'Bed_to_Toilet', 'Wash_Dishes']
