@@ -29,7 +29,8 @@ If you wish to attribute us when using this code, see the Huggingface repository
 
 # How to run the code
 ## PREREQUISITE
-To run any preprocessing, download the raw data as indicated in the corresponding sources.txt file
+To run any preprocessing, download the raw data as indicated in the corresponding sources.txt file, to the directory in which the sources.txt is located.
+Filenames should remain unchanged, as referred to in the sources.txt
 
 ## _easytpp
 - run: `python main.py`
