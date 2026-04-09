@@ -9,5 +9,4 @@ seaborn
 scikit-learn
 tabulate
 tick
-torchsearchsorted
 six
