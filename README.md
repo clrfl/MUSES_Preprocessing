@@ -52,6 +52,7 @@ If you wish to attribute us when using this code, see the Huggingface repository
 - output: parquet files for each data split of dataset 'earthquake'
 
 ## hawkes
+- run `pip install -e torchsearchsorted-master`
 - run: `python generate_hawkes_data_enguehard.py`
 - run: `python generate_hawkes_data_omi.py`
 - Adjust paths to username in 'preprocess_hawkes_data.py'
