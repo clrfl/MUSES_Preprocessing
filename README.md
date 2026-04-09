@@ -29,9 +29,10 @@ If you wish to attribute us when using this code, see the Huggingface repository
 
 # How to run the code
 ## PREREQUISITE
-To run any preprocessing, download the raw data as indicated in the corresponding sources.txt file, to the directory in which the sources.txt is located.
-Filenames should remain unchanged, as referred to in the sources.txt
-Navigate to the corresponding folder and execute the steps as listed below to create datasets.
+- To run any preprocessing, download the raw data as indicated in the corresponding sources.txt file, to the directory in which the sources.txt is located.
+- Filenames should remain unchanged, as referred to in the sources.txt
+- Navigate to the corresponding folder and execute the steps as listed below to create datasets.
+- Install required packages *for each subdirectory* with `pip install -r requirements.txt`
 
 ## _easytpp
 - run: `python main.py`
