@@ -52,13 +52,14 @@ If you wish to attribute us when using this code, see the Huggingface repository
 - output: parquet files for each data split of dataset 'earthquake'
 
 ## hawkes
+- NOTE: Used libraries might not yet work on latest python versions. Try running the hawkes generator on Python 3.8
 - run `pip install -e torchsearchsorted-master`
 - run: `python generate_hawkes_data_enguehard.py`
 - run: `python generate_hawkes_data_omi.py`
 - Adjust paths to username in 'preprocess_hawkes_data.py'
 - run: `python preprocess_hawkes_data.py`
 - output: parquet files for each data split of datasets 'hawkes_dependent' (enguehard) and 'hawkes_1' (omi)
-- NOTE: Used libraries might not yet work on latest python versions. Try running the hawkes generator on Python 3.8
+
 
 ## human_activity
 - run: `python main.py`
@@ -73,11 +74,12 @@ If you wish to attribute us when using this code, see the Huggingface repository
 - output: parquet files for each data split of dataset 'mooc'
 
 ## spiketrains
+- NOTE: Used libraries might not yet work on latest python versions. Try running 'step1_main.py' on Python 3.7
 - run: `python step1_main.py`
 - run: `python step2_loader.py`
 - run: `python step3.py`
 - output: parquet files for each data split of dataset 'spiketrains'
-- NOTE: Used libraries might not yet work on latest python versions. Try running 'step1_main.py' on Python 3.7
+
   
 ## stackoverflow
 - run: `python stackoverflow.py`
